@@ -2,7 +2,8 @@ from fastapi import FastAPI, Request
 
 app = FastAPI()
 
-@app.post("/webhook")
+@app.api_route("/", methods=["GET", "POST"])
+@app.api_route("/webhook", methods=["GET", "POST"])
 async def webhook(request: Request):
     try:
         data = await request.json()
