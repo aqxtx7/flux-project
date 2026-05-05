@@ -4,9 +4,12 @@ app = FastAPI()
 
 @app.post("/webhook")
 async def webhook(request: Request):
-    data = await request.json()
+    try:
+        data = await request.json()
+    except:
+        data = {"message": "no json payload"}
+
     print("🔥 Webhook received:")
     print(data)
-    return {"status": "ok"}
 
-    print("updated changed again")
+    return {"status": "ok"}
