@@ -14,3 +14,5 @@ async def webhook(request: Request):
     print(data)
 
     return {"status": "ok"}
+
+    print("beauty")
