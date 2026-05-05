@@ -8,5 +8,3 @@ async def webhook(request: Request):
     print("🔥 Webhook received:")
     print(data)
     return {"status": "ok"}
-
-    print("trigger test")
